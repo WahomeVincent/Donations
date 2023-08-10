@@ -1,45 +1,60 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 import './charities.css'
+import React, { useEffect, useState } from "react";
 
-function Charities() {
-    return(
-        
-        <>
-        <div className="charity-container">
-            <div className="charity-card"  >
-  <img src="https://www.learninglions.org/wp-content/uploads/2022/05/logo_header_LL.png" class="card-img-top" alt="..." />
-  <div class="charity-card-body">
-    <h5 class="card-title">Learning Lions</h5>
-    <p class="card-text">Learning Lions is a non-profit organisation enabling young adults in marginalised rural communities of East Africa to become digital creatives and live a life full of (digital) opportunity, right from their home regions</p>
-    <a href="https://www.learninglions.org/" class="btn btn-primary">Learn More</a>
-  </div>
-</div>
+function CharityDetails() {
+  const [charityData, setCharityData] = useState([]);
 
-<div className="charity-card"  >
-  <img src="https://girlsact.org/wp-content/uploads/2022/07/cropped-GirlsAct_Logo_150px.png" class="card-img-top" alt="..." />
-  <div class="charity-card-body">
-    <h5 class="card-title">Girls Act</h5>
-    <p class="card-text">A girl led initiative, Girls Act fosters leadership and confidence for girls and young women to support each other, strengthen fundamental life skills, and develop community activism.</p>
-    <a href="https://girlsact.org/" class="btn btn-primary">Learn More</a>
-  </div>
-</div>
+  useEffect(() => {
+    fetch("/charities") // Fetch the charity data endpoint from your backend
+      .then((res) => res.json())
+      .then((data) => {
+        setCharityData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching charity data:", error);
+      });
+  }, []);
 
-<div className="charity-card"  >
-  <img src="https://samburugirls.foundation/wp-content/uploads/2018/05/sgf-logo-250x250.gif" class="card-img-top" alt="..." />
-  <div class="charity-card-body">
-    <h5 class="card-title">Samburu Girls Foundation</h5>
-    <p class="card-text">A non-profit organisation enabling young adults in marginalised rural communities of East Africa to become digital creatives and live a life full of (digital) opportunity, right from their home regions.</p>
-    <a href="#" class="btn btn-primary">Learn More</a>
-  </div>
-</div>
+  const handleDelete = (id) => {
+    fetch(`/charities/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // Update the charityData state to reflect the changes
+          setCharityData(charityData.filter((charity) => charity.id !== id));
+        } else {
+          console.error("Error deleting charity:", data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting charity:", error);
+      });
+  };
 
+  return (
+    <div>
+      <h2 style={{textAlign: 'center'}}>Available Charities</h2>
+      <div className="charity-card-container">
+        {charityData.map((charity) => (
+          <div key={charity.id} className="charity-card">
+            <h2>{charity.name}</h2>
+            <img src={charity.image} alt='charity-image' />
+            <h4>About us</h4>
+            <p>{charity.description}</p>
+            <Link to='/donations'>
+              <button onClick={() => handleDelete(charity.id)}>Donate</button>
 
+            </Link>
 
-
-</div>
-			
-        </>
-    )
+            <button onClick={() => handleDelete(charity.id)} id='learn-more'>Learn more...</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default Charities;
+export default CharityDetails;
