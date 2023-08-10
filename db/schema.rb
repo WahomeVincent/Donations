@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_103353) do
   create_table "charities", force: :cascade do |t|
     t.string "name"
     t.integer "license"
-    t.integer "description"
+    t.string "description"
     t.string "email"
     t.string "image"
     t.datetime "created_at", null: false
