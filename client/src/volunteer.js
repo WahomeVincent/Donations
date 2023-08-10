@@ -38,13 +38,13 @@ function Volunteer(){
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                       <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m1">Mother's name</label>
+                      <label class="form-label" for="form3Example1m1">Email Address</label>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                       <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1n1">Father's name</label>
+                      <label class="form-label" for="form3Example1n1">Age</label>
                     </div>
                   </div>
                 </div>
@@ -68,12 +68,6 @@ function Volunteer(){
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
                       value="option2" />
                     <label class="form-check-label" for="maleGender">Male</label>
-                  </div>
-
-                  <div class="form-check form-check-inline mb-0">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                      value="option3" />
-                    <label class="form-check-label" for="otherGender">Other</label>
                   </div>
 
                 </div>
@@ -103,23 +97,10 @@ function Volunteer(){
 
                 <div class="form-outline mb-4">
                   <input type="text" id="form3Example9" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example9">DOB</label>
+                  <label class="form-label" for="form3Example9">Remarks</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example90" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example90">Pincode</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example99" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example99">Course</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example97" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example97">Email ID</label>
-                </div>
+                
 
                 <div class="d-flex justify-content-end pt-3">
                   <button type="button" class="btn btn-light btn-lg">Reset all</button>
