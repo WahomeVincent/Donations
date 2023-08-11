@@ -20,21 +20,21 @@ function Home(){
     <div class="carousel-item active" data-bs-interval="10000">
       <img src={girls} class="d-block w-100" alt="Girls" />
       <div class="carousel-caption d-none d-md-block">
-        <h5 className="carousel-header">Girls movement</h5>
-        <p className="carousel-text" >Aiming to keep more and more girls in school.</p>
+        <h1>Girls movement</h1>
+        <p  >Aiming to keep more and more girls in school.</p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
       <img src="https://images.unsplash.com/photo-1559079236-2e64f89c7764?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="water" />
       <div class="carousel-caption d-none d-md-block">
-        <h5 className="carousel-header">Hygiene and Water</h5>
-        <p className="carousel-text">Providing sufficient water to all.</p>
+        <h1 >Hygiene and Water</h1>
+        <p >Providing sufficient water to all.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://i.pinimg.com/236x/48/ad/0a/48ad0adfdc6b9547e038b36ec7479f1e.jpg" class="d-block w-100" alt="sanitation facilities" />
       <div class="carousel-caption d-none d-md-block">
-        <h5 className="carousel-header">Sanitation facilites</h5>
+        <h1 >Sanitation facilites</h1>
         <p></p>
       </div>
     </div>

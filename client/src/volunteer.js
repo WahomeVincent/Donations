@@ -1,10 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Volunteer(){
+
+  const navigate = useNavigate();
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+
+  alert ("Thank you. Your application has been received.");
+  navigate('/')
+
+}
+
     return(
         <>
                 <section class="h-100 bg-dark">
   <div class="container py-5 h-100">
+  <form onSubmit={handleSubmit}>
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
         <div class="card card-registration my-4">
@@ -17,6 +30,7 @@ function Volunteer(){
             </div>
             <div class="col-xl-6">
               <div class="card-body p-md-5 text-black">
+                
                 <h3 class="mb-5 text-uppercase">Volunteer registration form</h3>
 
                 <div class="row">
@@ -72,28 +86,7 @@ function Volunteer(){
 
                 </div>
 
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-
-                    <select class="select">
-                      <option value="1">State</option>
-                      <option value="2">Option 1</option>
-                      <option value="3">Option 2</option>
-                      <option value="4">Option 3</option>
-                    </select>
-
-                  </div>
-                  <div class="col-md-6 mb-4">
-
-                    <select class="select">
-                      <option value="1">City</option>
-                      <option value="2">Option 1</option>
-                      <option value="3">Option 2</option>
-                      <option value="4">Option 3</option>
-                    </select>
-
-                  </div>
-                </div>
+                
 
                 <div class="form-outline mb-4">
                   <input type="text" id="form3Example9" class="form-control form-control-lg" />
@@ -103,16 +96,18 @@ function Volunteer(){
                 
 
                 <div class="d-flex justify-content-end pt-3">
-                  <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                  <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                  <button type="reset" class="btn btn-light btn-lg">Reset all</button>
+                  <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
                 </div>
 
               </div>
             </div>
+            
           </div>
         </div>
       </div>
     </div>
+    </form>
   </div>
 </section>
         </>

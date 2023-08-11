@@ -35,7 +35,7 @@ function Createcharity({user_id}){
     .then((res) => res.json())
     .then((data) => {
       if (data) {
-        alert("Post created successfully");
+        alert("Charity added successfully. Awaiting Aprroval.");
         navigate("/charities")
       }
     })
@@ -147,7 +147,7 @@ function Createcharity({user_id}){
 
                   <div class="form-outline">
                     <input 
-                    type="text" 
+                    type="text-area" 
           
                     class="form-control form-control-lg" 
                     value={description}
